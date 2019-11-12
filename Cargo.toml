@@ -1,13 +1,13 @@
 [package]
-name = "liquid-dsp-bindings"
+name = "liquid-dsp-bindings-sys"
 version = "0.1.0"
 authors = ["Jacob Holtom <jacob@holtom.me>"]
 edition = "2018"
-description = "These are Rust bindings for liquid-dsp (liquidsdr.org)"
+description = "These are the low-level C to Rust bindings for liquid-dsp (liquidsdr.org)"
 license = "WTFPL"
 keywords = ["sdr","dsp","liquid","signal","radio"]
 categories = ["external-ffi-bindings"]
-repository = "https://github.com/jholtom/liquid-dsp-bindings"
+repository = "https://github.com/jholtom/liquid-dsp-bindings-sys"
 
 [build-dependencies]
 bindgen = "0.50"
