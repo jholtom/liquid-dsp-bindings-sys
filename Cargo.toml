@@ -1,6 +1,6 @@
 
 [package]
-name = "liquid-dsp-sys"
+name = "liquid-dsp-bindings-sys"
 version = "0.1.0"
 authors = ["Jacob Holtom <jacob@holtom.me>"]
 edition = "2018"
