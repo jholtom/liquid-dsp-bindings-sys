@@ -1,5 +1,6 @@
+
 [package]
-name = "liquid-dsp-bindings-sys"
+name = "liquid-dsp-sys"
 version = "0.1.0"
 authors = ["Jacob Holtom <jacob@holtom.me>"]
 edition = "2018"
@@ -8,6 +9,13 @@ license = "WTFPL"
 keywords = ["sdr","dsp","liquid","signal","radio"]
 categories = ["external-ffi-bindings"]
 repository = "https://github.com/jholtom/liquid-dsp-bindings-sys"
+links = "liquid"
+build= "build.rs"
+
+[lib]
+name = "liquid_sys"
+path = "src/lib.rs"
 
 [build-dependencies]
-bindgen = "0.50"
+bindgen = "*"
+
