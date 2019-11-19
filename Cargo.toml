@@ -12,10 +12,6 @@ repository = "https://github.com/jholtom/liquid-dsp-bindings-sys"
 links = "liquid"
 build= "build.rs"
 
-[lib]
-name = "liquid_sys"
-path = "src/lib.rs"
-
 [build-dependencies]
 bindgen = "*"
 
