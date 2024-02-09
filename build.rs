@@ -3,6 +3,9 @@ use std::env;
 use std::path::PathBuf;
 
 fn main(){
+    // A vec of arguments that will be passed to clang
+    let mut cl_args: Vec<String> = Vec::new();
+
     // Use user-provided header and lib files in the `liquid` subdirectory if provided
     // Otherwise use the system-provided header and lib
     let header = match std::fs::metadata("liquid/liquid.h") {
@@ -19,8 +22,16 @@ fn main(){
         }
     };
 
+    // Required for windows otherwise clang can't find some headers
+    cl_args.push(format!("--target={}", std::env::var("TARGET").expect("Failed to get target triple")));
+
+    // Required for windows otherwise clang can't find the right headers. This assumes that you have MSYS2 installed (right now, you need it to build liquid-dsp anyways)
+    #[cfg(target_os = "windows")]
+    cl_args.push("-I/msys64/usr/include".into());
+
     // Generate the bindings
     let bindings = bindgen::Builder::default()
+    .clang_args(cl_args)
     .generate_comments(true)
     .header(header)
     .generate()
