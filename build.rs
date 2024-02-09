@@ -9,7 +9,7 @@ fn main(){
     println!("cargo:rustc-link-search={}", PathBuf::from("liquid").canonicalize().unwrap().to_str().unwrap());
     
     // Link the liquid library
-    println!("cargo:rustc-link-lib=static=liquid");
+    println!("cargo:rustc-link-lib=liquid");
 
     let bindings = bindgen::Builder::default()
         .generate_comments(true)
