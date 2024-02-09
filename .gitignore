@@ -1,3 +1,6 @@
 /target
 **/*.rs.bk
 Cargo.lock
+
+# Ignore liquid.h and libliquid.a. The user has to build the library themselves. 
+liquid/*
